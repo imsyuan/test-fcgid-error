@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  ubuntu-test:
+    container_name: ubuntu-test
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: ubuntu-apache-error-test
+    networks:
+      - LAN
+    ports:
+      - "80:80"
+
+networks:
+  LAN:
+    driver: bridge
+    name: LAN
